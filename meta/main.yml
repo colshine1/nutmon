@@ -11,6 +11,9 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - all
+    - name: Raspbian
+      versions:
+        - all
 
   galaxy_tags: []
     # List tags for your role here, one per line. A tag is a keyword that describes
