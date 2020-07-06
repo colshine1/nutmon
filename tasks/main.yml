@@ -4,7 +4,7 @@
 - name: Install nutmon & update repositories cache
   apt:
     name: "{{ nutmon_ubuntu_package_list }}"
-    update_cache: yes
+    update_cache: true
   become: true
 
 - name: setup templates

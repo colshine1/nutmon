@@ -1,6 +1,11 @@
 ---
 dependency:
   name: galaxy
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
+  flake8
 driver:
   name: docker
 platforms:
@@ -9,5 +14,9 @@ platforms:
     pre_build_image: true
 provisioner:
   name: ansible
+scenario:
+  test_sequence:
+    - lint
+    - syntax
 verifier:
   name: ansible
