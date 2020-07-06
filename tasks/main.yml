@@ -1,0 +1,22 @@
+---
+# tasks file for nutmon
+
+- name: Install nutmon & update repositories cache
+  apt:
+    name: "{{ nutmon_ubuntu_package_list }}"
+    update_cache: yes
+  become: true
+
+- name: setup templates
+  template:
+    src: "{{ item }}.j2"
+    dest: "{{ nutmon_config_files_dir }}/{{ item }}"
+    owner: root
+    group: nut
+    mode: 0640
+  loop: "{{ nutmon_config_file }}"
+  become: true
+  notify:
+    - "restart nut-driver"
+    - "restart nut-server"
+    - "restart nut-monitor"

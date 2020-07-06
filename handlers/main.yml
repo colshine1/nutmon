@@ -1,0 +1,23 @@
+---
+# handlers file for nutmon
+
+- name: restart nut-driver
+  service:
+    name: nut-driver
+    state: restarted
+    enabled: true
+  become: true
+
+- name: restart nut-server
+  service:
+    name: nut-server
+    state: restarted
+    enabled: true
+  become: true
+
+- name: restart nut-monitor
+  service:
+    name: nut-monitor
+    state: restarted
+    enabled: true
+  become: true

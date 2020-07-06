@@ -1,0 +1,24 @@
+---
+# defaults file for nutmon
+
+nutmon_ubuntu_package_list:
+  - nut
+
+nutmon_config_files_dir: /etc/nut
+
+nutmon_config_file:
+  - ups.conf
+  - nut.conf
+  - upsd.users
+  - upsd.conf
+  - upsmon.conf
+
+ups:
+  name: apc_smt_1500
+  driver: usbhid-ups
+  port: auto
+  desc: "APC Smart-UPS 1500IC"
+  mode: netserver
+
+synology_client: false
+ 
